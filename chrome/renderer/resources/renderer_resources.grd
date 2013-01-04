@@ -42,6 +42,22 @@ without changes to the corresponding grd file. fb9 -->
       <include name="IDR_TAG_WATCHER_JS" file="extensions\tag_watcher.js" type="BINDATA" />
       <include name="IDR_UNLOAD_EVENT_JS" file="extensions\unload_event.js" type="BINDATA" />
       <include name="IDR_UTILS_JS" file="extensions\utils.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_DEFINITIONS_JS" file="jslib\jit\compiler\definitions.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_DOTVIZ_JS" file="jslib\jit\compiler\dotviz.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_DRIVER_JS" file="jslib\jit\compiler\driver.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_GENOCL_JS" file="jslib\jit\compiler\genOCL.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_HELPER_JS" file="jslib\jit\compiler\helper.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_INFERBLOCKFLOW_JS" file="jslib\jit\compiler\inferblockflow.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_INFERMEM_JS" file="jslib\jit\compiler\infermem.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_RANGEANALYSIS_JS" file="jslib\jit\compiler\rangeanalysis.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_RUNOCL_JS" file="jslib\jit\compiler\runOCL.js" type="BINDATA" />
+      <include name="IDR_JIT_COMPILER_TYPEINFERENCE_JS" file="jslib\jit\compiler\typeinference.js" type="BINDATA" />
+      <include name="IDR_JIT_NARCISSUS_JSDECOMP_JS" file="jslib\jit\narcissus\jsdecomp.js" type="BINDATA" />
+      <include name="IDR_JIT_NARCISSUS_JSDEFS_JS" file="jslib\jit\narcissus\jsdefs.js" type="BINDATA" />
+      <include name="IDR_JIT_NARCISSUS_JSLEX_JS" file="jslib\jit\narcissus\jslex.js" type="BINDATA" />
+      <include name="IDR_JIT_NARCISSUS_JSPARSE_JS" file="jslib\jit\narcissus\jsparse.js" type="BINDATA" />
+      <include name="IDR_PARALLEL_ARRAY_JS" file="jslib\ParallelArray.js" type="BINDATA" />
+
 
       <if expr="pp_ifdef('enable_extensions')">
         <!-- Custom bindings for extension APIs. -->

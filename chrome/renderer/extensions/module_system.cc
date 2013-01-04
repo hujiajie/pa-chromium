@@ -151,6 +151,16 @@ v8::Handle<v8::Value> ModuleSystem::RequireForJsInner(
   v8::HandleScope handle_scope;
   v8::Context::Scope context_scope(context()->v8_context());
 
+  //There are some eval functions in compiler and narcissus js libs,
+  //When load this js files , make sure that the current context allows
+  //the function like eval...
+  std::string std_module_name = *v8::String::AsciiValue(module_name);
+  if (std_module_name.substr(0, 14) == "jitNarcissusJS" ||
+    std_module_name.substr(0, 11) == "jitCompiler")
+    v8::Context::GetCurrent()->AllowCodeGenerationFromStrings(true);
+  else
+    v8::Context::GetCurrent()->AllowCodeGenerationFromStrings(false);
+
   v8::Handle<v8::Object> global(context()->v8_context()->Global());
 
   // The module system might have been deleted. This can happen if a different

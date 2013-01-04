@@ -896,6 +896,21 @@ void Dispatcher::PopulateSourceMap() {
   source_map_.RegisterSource("unload_event", IDR_UNLOAD_EVENT_JS);
   source_map_.RegisterSource("utils", IDR_UTILS_JS);
 
+  source_map_.RegisterSource("jitCompilerDotviz", IDR_JIT_COMPILER_DOTVIZ_JS);
+  source_map_.RegisterSource("jitCompilerDriver", IDR_JIT_COMPILER_DRIVER_JS);
+  source_map_.RegisterSource("jitCompilerGenOCL", IDR_JIT_COMPILER_GENOCL_JS);
+  source_map_.RegisterSource("jitCompilerHelper", IDR_JIT_COMPILER_HELPER_JS);
+  source_map_.RegisterSource("jitCompilerInferBlockFlow", IDR_JIT_COMPILER_INFERBLOCKFLOW_JS);
+  source_map_.RegisterSource("jitCompilerInfermem", IDR_JIT_COMPILER_INFERMEM_JS);
+  source_map_.RegisterSource("jitCompilerRangeAnalysis", IDR_JIT_COMPILER_RANGEANALYSIS_JS);
+  source_map_.RegisterSource("jitCompilerRunOCL", IDR_JIT_COMPILER_RUNOCL_JS);
+  source_map_.RegisterSource("jitCompilerTypeInference", IDR_JIT_COMPILER_TYPEINFERENCE_JS);
+  source_map_.RegisterSource("jitNarcissusJSDecomp", IDR_JIT_NARCISSUS_JSDECOMP_JS);
+  source_map_.RegisterSource("jitNarcissusJSDefs", IDR_JIT_NARCISSUS_JSDEFS_JS);
+  source_map_.RegisterSource("jitNarcissusJSLex", IDR_JIT_NARCISSUS_JSLEX_JS);
+  source_map_.RegisterSource("jitNarcissusJSParse", IDR_JIT_NARCISSUS_JSPARSE_JS);
+  source_map_.RegisterSource("ParallelArray", IDR_PARALLEL_ARRAY_JS);
+
   // Custom bindings.
   source_map_.RegisterSource("app", IDR_APP_CUSTOM_BINDINGS_JS);
   source_map_.RegisterSource("app.runtime", IDR_APP_RUNTIME_CUSTOM_BINDINGS_JS);

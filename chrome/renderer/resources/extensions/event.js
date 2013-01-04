@@ -10,6 +10,23 @@
   var validate = require('schemaUtils').validate;
   var unloadEvent = require('unload_event');
 
+  var ParallelArray = require('ParallelArray');
+
+  var jitNDefs = require('jitNarcissusJSDefs').definitions;
+  var jitNLex = require('jitNarcissusJSLex');
+  var jitNParse = require('jitNarcissusJSParse');
+  var jitNDecomp = require('jitNarcissusJSDecomp');
+  var jitCDefs = require('jitCompilerDefinitions');
+  var jitCHelper = require('jitCompilerHelper');
+  var jitCDriver = require('jitCompilerDriver');
+  var jitCDotviz = require('jitCompilerDotviz');
+  var jitCTI = require('jitCompilerTypeInference');
+  var jitCCRA = require('jitCompilerRangeAnalysis');
+  var jitCIBF = require('jitCompilerInferBlockFlow');
+  var jitCIM = require('jitCompilerInfermem');
+  var jitCGenOCL = require('jitCompilerGenOCL');
+  var jitCRunOCL = require('jitCompilerRunOCL');
+
   // Schemas for the rule-style functions on the events API that
   // only need to be generated occasionally, so populate them lazily.
   var ruleFunctionSchemas = {

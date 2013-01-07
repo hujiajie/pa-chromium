@@ -17,6 +17,7 @@
 #include "skia/ext/vector_platform_device_emf_win.h"
 #include "third_party/icu/public/i18n/unicode/timezone.h"
 #include "third_party/skia/include/ports/SkTypeface_win.h"
+#include "third_party/WebKit/Source/core/rivertrail/OCLUtil.h"
 
 #ifdef ENABLE_VTUNE_JIT_INTERFACE
 #include "v8/src/third_party/vtune/v8-vtune.h"
@@ -93,6 +94,12 @@ void RendererMainPlatformDelegate::PlatformInitialize() {
   // Be mindful of what resources you acquire here. They can be used by
   // malicious code if the renderer gets compromised.
   bool no_sandbox = command_line.HasSwitch(switches::kNoSandbox);
+
+  // OCLUtil class (used in RiverTrail) needs to initialize
+  // before render process sanboxed, because it needs to access the
+  // registry keys and load the context.
+  WebCore::OCLUtil* opencl_util = new WebCore::OCLUtil();
+  opencl_util->Init();
 
   if (!no_sandbox) {
     // ICU DateFormat class (used in base/time_format.cc) needs to get the

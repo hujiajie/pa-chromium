@@ -496,5 +496,20 @@
         ['include', '^renderer/render_view_linux\\.cc$'],
       ],
     }],
+    ['OS=="win"', {
+      'include_dirs': [
+        '$(INTELOCLSDKROOT)/include',
+      ],
+      'msvs_settings': {
+        'VCLinkerTool': {
+          'AdditionalLibraryDirectories': [
+            '$(INTELOCLSDKROOT)/lib/x86',
+          ],
+          'AdditionalDependencies': [
+            'OpenCL.lib',
+          ],
+        },
+      },
+    }],
   ],
 }

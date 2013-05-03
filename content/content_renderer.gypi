@@ -498,18 +498,8 @@
     }],
     ['OS=="win"', {
       'include_dirs': [
-        '$(INTELOCLSDKROOT)/include',
+        '<(opencl_sdk_path)/include',
       ],
-      'msvs_settings': {
-        'VCLinkerTool': {
-          'AdditionalLibraryDirectories': [
-            '$(INTELOCLSDKROOT)/lib/x86',
-          ],
-          'AdditionalDependencies': [
-            'OpenCL.lib',
-          ],
-        },
-      },
     }],
   ],
 }

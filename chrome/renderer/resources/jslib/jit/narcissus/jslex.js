@@ -586,3 +586,4 @@ Narcissus.lexer = (function() {
     };
 
 }());
+exports = Narcissus.lexer;

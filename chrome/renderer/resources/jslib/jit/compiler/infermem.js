@@ -25,10 +25,6 @@
  *
  */
 
-if (RiverTrail === undefined) {
-    var RiverTrail = {};
-}
-
 RiverTrail.InferMem = function () {
     var definitions = Narcissus.definitions;
     eval(definitions.consts);
@@ -566,3 +562,4 @@ RiverTrail.InferMem = function () {
         "infer" : doInfer
     };
 }();
+exports = RiverTrail.InferMem;

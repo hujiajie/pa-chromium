@@ -34,9 +34,7 @@
 // It basically hides everything in the local scope of the function, executes the function and
 // returns only the external needed outside of the function.
 
-if (RiverTrail === undefined) {
-    var RiverTrail = {};
-}
+
 
 var useFF4Interface;
 var useCrInterface;
@@ -329,4 +327,4 @@ RiverTrail.compiler = (function () {
         openCLContext: openCLContext
     };
 }());
-
+exports = RiverTrail.compiler;

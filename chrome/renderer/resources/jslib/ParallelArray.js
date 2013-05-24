@@ -92,18 +92,13 @@
 /////////////////
 
 
-var ParallelArray = function () {
+ParallelArray = function () {
 
 
 //    The array object has the following prototype methods that are also implemented
 //    for ParallelArray.
 
 //    concat, join, slice, toString
-
-//    See https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array
-//    for their description.
-
-
 
 //    The ParallelArray prototype includes the data parallel mechanisms used by ParallelArrays.
 //
@@ -439,10 +434,6 @@ var ParallelArray = function () {
     };
 
     // Proxy handler for mapping [<number>] and [<Array>] to call of |get|.
-    // The forwarding part of this proxy is taken from
-    // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Proxy
-    // which in turn was copied from the ECMAScript wiki at
-    // http://wiki.ecmascript.org/doku.php?id=harmony:proxies&s=proxy
     var makeIndexOpHandler = function makeIndexOpProxy (obj) {
         return {  
             // Fundamental traps  
@@ -2086,7 +2077,7 @@ var ParallelArray = function () {
     return ParallelArray;
 }(); // end ParallelArray.prototype
 
-var low_precision = function (f) {
+low_precision = function (f) {
     if (typeof(f) !== "function") {
         throw new TypeError("low_precision can only be applied to functions");
     }

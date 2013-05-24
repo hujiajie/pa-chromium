@@ -24,10 +24,12 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
+(function () {
 
-if (RiverTrail === undefined) {
-    var RiverTrail = {};
-}
+    var  rivertrail= {};
+    RiverTrail = rivertrail;
+    exports = RiverTrail;
+})();
 
 RiverTrail.definitions = function () {
     var tokens= [ "CAST", "TOINT32", "FLATTEN" ];
@@ -48,4 +50,4 @@ RiverTrail.definitions = function () {
     return {"consts" : consts, "tokens" : tokens};
 }();
 
-
+exports = RiverTrail.definitions;

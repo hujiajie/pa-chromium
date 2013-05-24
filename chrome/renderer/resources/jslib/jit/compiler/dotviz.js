@@ -208,3 +208,4 @@ RiverTrail.dotviz = function () {
         "plotTypes": plotTypes
     };
 }();
+exports = RiverTrail.dotviz;

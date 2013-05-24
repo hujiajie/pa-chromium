@@ -1919,3 +1919,4 @@ Narcissus.parser = (function() {
     };
 
 }());
+exports = Narcissus.parser;

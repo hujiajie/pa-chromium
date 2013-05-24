@@ -25,10 +25,6 @@
  *
  */
 
-if (RiverTrail === undefined) {
-    var RiverTrail = {};
-}
-
 RiverTrail.Helper = function () {
     eval(Narcissus.definitions.consts);
 
@@ -548,3 +544,4 @@ RiverTrail.Helper = function () {
     };
 
 }();
+exports = RiverTrail.Helper;

@@ -25,11 +25,6 @@
  *
  */
 
-if (RiverTrail === undefined) {
-    var RiverTrail = {};
-}
-
-
 //
 // This phase collects flow information of variables, namely
 //
@@ -442,3 +437,4 @@ RiverTrail.InferBlockFlow = function () {
         "infer" : infer,
     };
 }();
+exports = RiverTrail.InferBlockFlow;

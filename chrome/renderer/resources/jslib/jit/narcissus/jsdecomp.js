@@ -554,3 +554,5 @@ Narcissus.decompiler = (function() {
     };
 
 }());
+
+exports = Narcissus.decompiler;

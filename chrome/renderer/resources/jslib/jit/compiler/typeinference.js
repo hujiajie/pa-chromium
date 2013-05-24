@@ -30,11 +30,12 @@
 //
 
 
-var globalInlineObjectTypes = [];
+RiverTrail.globalInlineObjectTypes = [];
 RiverTrail.Typeinference = function () {
     var stackTrace = [];
 
     var definitions = Narcissus.definitions;
+    var globalInlineObjectTypes = RiverTrail.globalInlineObjectTypes;
     eval(definitions.consts);
     eval(RiverTrail.definitions.consts);
 
@@ -42,7 +43,6 @@ RiverTrail.Typeinference = function () {
     var nameGen = RiverTrail.Helper.nameGen;
     
     const debug = false;
-    //const allowGlobalFuns = false; // Set to true so kernel functions can call global functions.
     const allowGlobalFuns = true; // Set to true so kernel functions can call global functions.
     const lazyJSArrayCheck = true; // check for homogeneity of JS Arrays at runtime
 
@@ -666,16 +666,6 @@ RiverTrail.Typeinference = function () {
                     return false;
                 if(!fields[idx].equals(other_fields[idx]))
                     return false;
-                /*
-                if(fields[idx] === other_fields[idx])
-                    continue;
-                if(fields[idx].OpenCLType !== other_fields[idx].OpenCLType)
-                    return false;
-                // The following only compares the outer shape!
-                // Fix this to compare the entire shape array
-                if(fields[idx].properties.shape !== other_fields[idx].properties.shape)
-                    return false;
-                */
             }
             return true;
         }
@@ -1977,3 +1967,4 @@ RiverTrail.Typeinference = function () {
         "typeOracle" : typeOracle
     };
 }();
+exports = RiverTrail.Typeinference;

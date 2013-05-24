@@ -72,6 +72,7 @@
         hostGlobal: this
     };
     Narcissus = narcissus;
+    exports = Narcissus;
 })();
 
 Narcissus.definitions = (function(hostGlobal) {
@@ -706,3 +707,4 @@ Narcissus.definitions = (function(hostGlobal) {
         Stack: Stack
     };
 }(this));
+exports = Narcissus.definitions;

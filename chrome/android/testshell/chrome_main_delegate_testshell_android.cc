@@ -6,8 +6,10 @@
 
 #include "base/android/jni_android.h"
 #include "base/android/jni_registrar.h"
+#include "base/command_line.h"
 #include "chrome/android/testshell/testshell_tab.h"
 #include "chrome/browser/search_engines/template_url_prepopulate_data.h"
+#include "content/public/common/content_switches.h"
 
 static const char kDefaultCountryCode[] = "US";
 
@@ -26,6 +28,9 @@ ChromeMainDelegateTestShellAndroid::~ChromeMainDelegateTestShellAndroid() {
 }
 
 bool ChromeMainDelegateTestShellAndroid::BasicStartupComplete(int* exit_code) {
+  CommandLine::ForCurrentProcess()->AppendSwitch(switches::kEnableExperimentalWebGL);
+  CommandLine::ForCurrentProcess()->AppendSwitch(switches::kAllowFileAccessFromFiles);
+
   TemplateURLPrepopulateData::InitCountryCode(kDefaultCountryCode);
   return ChromeMainDelegateAndroid::BasicStartupComplete(exit_code);
 }

@@ -1114,7 +1114,7 @@
       ['OS=="win"', {
         'windows_driver_kit_path%': '$(WDK_DIR)',
         # Path to OpenCL SDK
-	'opencl_sdk_path': '<!(python <(DEPTH)/build/find_opencl.py)',
+	'opencl_sdk_path%': '<!(python <(DEPTH)/build/find_opencl.py)',
         # Set the python arch to prevent conflicts with pyauto on Win64 build.
         # TODO(jschuh): crbug.com/177664 Investigate Win64 pyauto build.
         'python_arch%': 'ia32',

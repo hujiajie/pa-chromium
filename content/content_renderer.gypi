@@ -364,6 +364,11 @@
         'common/process_watcher_posix.cc',
       ],
     }],
+    ['OS=="win"', {
+      'include_dirs': [
+        '<(opencl_sdk_path)/include',
+      ],
+    }],
     ['OS=="win" and win_use_allocator_shim==1', {
       'dependencies': [
           '../base/allocator/allocator.gyp:allocator',
@@ -494,11 +499,6 @@
     ['OS=="android"', {
       'sources/': [
         ['include', '^renderer/render_view_linux\\.cc$'],
-      ],
-    }],
-    ['OS=="win"', {
-      'include_dirs': [
-        '<(opencl_sdk_path)/include',
       ],
     }],
   ],
